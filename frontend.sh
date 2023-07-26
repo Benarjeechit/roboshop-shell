@@ -1,3 +1,4 @@
+cp nginx-roboshop.conf /etc/default.d/roboshop.conf
 yum install nginx -y
 
 rm -rf /usr/share/nginx/html/*
