@@ -47,7 +47,7 @@ func_nodejs() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Creating Mongodb Repo File >>>>
                 echo -e "\e[36m>>>>>>>>>>>>>>>>> Adding Schema To Database >>>>>>>>>\e[om"
                 mongo --host mongodb.benzdevops.online </app/schema/${component}.js &>>/tmp/roboshop.log &>>${log}
                  echo -e "\e[36m>>>>>>>>>>>>>>>>> Enabling Component >>>>>>>>>\e[om"
-                func_systemd &>>${log}
+                func_systemd
 }
 
 func_python() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Installing Python >>>>>>>>>\e[om"
@@ -92,7 +92,7 @@ func_java() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Installing Maven >>>>>>>>>\e[om"
               mysql -h mysql.benzdevops.online -uroot -pRoboShop@1 < /app/schema/${component}.sql &>>${log}
 
               echo -e "\e[36m>>>>>>>>>>>>>>>>> Enabling Component >>>>>>>>>\e[om"
-              func_systemd &>>${log}
+              func_systemd
 }
 
 func_golang() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Installing Golang >>>>>>>>>\e[om"
