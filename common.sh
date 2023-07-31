@@ -51,22 +51,22 @@ func_nodejs() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Creating Mongodb Repo File >>>>
 }
 
 func_python() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Installing Python >>>>>>>>>\e[om"
-                yum install python36 gcc python3-devel -y &>>${log}
+                yum install python36 gcc python3-devel -y
 
                 echo -e "\e[36m>>>>>>>>>>>>>>>>> Creating Component Service >>>>>>>>>\e[om"
-                func_apppreq &>>${log}
+                func_apppreq
 
                 echo -e "\e[36m>>>>>>>>>>>>>>>>> Downloading Data To The Component >>>>>>>>>\e[om"
-                curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
+                curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip
 
                 echo -e "\e[36m>>>>>>>>>>>>>>>>> Unzipping Component>>>>>>>>>\e[om"
-                func_unzip &>>${log}
+                func_unzip
 
                 echo -e "\e[36m>>>>>>>>>>>>>>>>> Downloading dependencies >>>>>>>>>\e[om"
-                pip3.6 install -r requirements.txt &>>${log}
+                pip3.6 install -r requirements.txt
 
                 echo -e "\e[36m>>>>>>>>>>>>>>>>> Enabling Component >>>>>>>>>\e[om"
-                func_systemd &>>${log}
+                func_systemd
 }
 
 func_java() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Installing Maven >>>>>>>>>\e[om"
