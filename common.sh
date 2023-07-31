@@ -45,7 +45,7 @@ func_nodejs() { echo -e "\e[36m>>>>>>>>>>>>>>>>> Creating Mongodb Repo File >>>>
                 yum install mongodb-org-shell -y &>>${log}
 
                 echo -e "\e[36m>>>>>>>>>>>>>>>>> Adding Schema To Database >>>>>>>>>\e[om"
-                mongo --host mongodb.benzdevops.online </app/schema/${component}.js &>>/tmp/roboshop.log &>>${log}
+                mongo --host mongodb.benzdevops.online </app/schema/${component}.js &>>${log}
                  echo -e "\e[36m>>>>>>>>>>>>>>>>> Enabling Component >>>>>>>>>\e[om"
                 func_systemd
 }
